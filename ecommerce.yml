@@ -1,6 +1,6 @@
 token:
-  expiration_time: 86400000
-  secret: user_token_ecommerce_value
+  expiration_time: 8640
+  secret: user_token_ecommerce_value_1
 
 gateway:
   ip: 10.10.102.196
