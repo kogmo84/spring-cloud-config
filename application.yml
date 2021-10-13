@@ -6,4 +6,4 @@ gateway:
   ip: 10.10.102.196
 
 order_service:
-  url: http://order-service/order-service/%s/orders
+  url: http://ORDER-SERVICE/order-service/%s/orders
