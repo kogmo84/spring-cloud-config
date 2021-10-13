@@ -1,6 +1,9 @@
 token:
   expiration_time: 86400000
-  secret: user_token_native_application
+  secret: user_token_native_application_#
 
 gateway:
   ip: 10.10.102.196
+
+order_service:
+  url: http://10.10.101.78:55528/order-service/%s/orders
