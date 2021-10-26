@@ -1,9 +1,9 @@
 token:
   expiration_time: 864
-  secret: user_token_#
+  secret: user_token_live#
 
 gateway:
-  ip: 100.100.100.100
+  ip: 127.1.1.1
 
 order_service:
   url: http://ORDER-SERVICE/order-service/%s/orders
