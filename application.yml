@@ -1,0 +1,9 @@
+token:
+  expiration_time: 86400000
+  secret: my_token_#dev
+
+gateway:
+  ip: 127.0.0.1
+
+order_service:
+  url: http://ORDER-SERVICE/order-service/%s/orders
