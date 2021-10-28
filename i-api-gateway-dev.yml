@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 9000
 
 eureka:
   instance:
@@ -12,7 +12,7 @@ eureka:
 
 spring:
   application:
-    name: apigateway-service
+    name: i-apigateway-service
   zipkin:
     base-url: http://127.0.0.1:9411
     enabled: true
@@ -57,7 +57,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - AuthorizationHeaderFilter
+            # - AuthorizationHeaderFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -82,19 +82,6 @@ spring:
 #            - AddRequestHeader=first-request, first-request-header2
 #            - AddResponseHeader=first-response, first-response-header2
             - CustomFilter
-        - id: second-service
-          uri: lb://MY-SECOND-SERVICE
-          predicates:
-            - Path=/second-service/**
-          filters:
-#            - AddRequestHeader=second-request, second-request-header2
-#            - AddResponseHeader=second-response, second-response-header2
-            - name: CustomFilter
-            - name: LoggingFilter
-              args:
-                baseMessage: Hi, There.
-                preLogger: true
-                postLogger: true
 
 management:
   endpoints:
