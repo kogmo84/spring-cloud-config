@@ -102,3 +102,9 @@ management:
       exposure:
         include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus
 
+redis:
+  hostname: 10.10.102.196
+  port: 6379
+  database: 0
+  password:
+  timeout: 6000
