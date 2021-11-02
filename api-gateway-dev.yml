@@ -40,7 +40,6 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            # - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -48,7 +47,6 @@ spring:
             - Method=POST,GET
           filters:
             - RemoveRequestHeader=Cookie
-            # - RewritePath=/user-service/(?<segment>.*), /$\{segment}
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -56,7 +54,6 @@ spring:
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-            # - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - CustomFilter
             - AuthorizationHeaderFilter
         - id: user-service
@@ -75,27 +72,6 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order-service/**
-#         - id: first-service
-#           uri: lb://MY-FIRST-SERVICE
-#           predicates:
-#             - Path=/first-service/**
-#           filters:
-# #            - AddRequestHeader=first-request, first-request-header2
-# #            - AddResponseHeader=first-response, first-response-header2
-#             - CustomFilter
-#         - id: second-service
-#           uri: lb://MY-SECOND-SERVICE
-#           predicates:
-#             - Path=/second-service/**
-#           filters:
-# #            - AddRequestHeader=second-request, second-request-header2
-# #            - AddResponseHeader=second-response, second-response-header2
-#             - name: CustomFilter
-#             - name: LoggingFilter
-#               args:
-#                 baseMessage: Hi, There.
-#                 preLogger: true
-#                 postLogger: true
 
 management:
   endpoints:
