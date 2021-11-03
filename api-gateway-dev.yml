@@ -116,3 +116,8 @@ redis:
   database: 0
   password:
   timeout: 6000
+
+logging:
+  level:
+    org.springframework.cloud.gateway: trace
+    reactor.netty: trace
