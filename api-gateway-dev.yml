@@ -119,5 +119,5 @@ redis:
 
 logging:
   level:
-    org.springframework.cloud.gateway: trace
-    # reactor.netty: trace
+    org.springframework.cloud.gateway: debug
+    reactor.netty: debug
