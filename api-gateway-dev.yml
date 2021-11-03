@@ -61,6 +61,7 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
+            - LoggingFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
