@@ -26,6 +26,8 @@ spring:
     password: guest
   cloud:
     gateway:
+      httpclient:
+        wiretap: true
       default-filters:
         - name: GlobalFilter
           args:

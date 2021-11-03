@@ -27,7 +27,7 @@ spring:
   cloud:
     gateway:
       httpclient:
-      wiretap: true
+        wiretap: true
       default-filters:
         - name: GlobalFilter
           args:
