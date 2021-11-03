@@ -61,7 +61,7 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
-            - LoggingFilter
+            - name: LoggingFilter
               args:
                 baseMessage: Hi, There.
                 preLogger: true
