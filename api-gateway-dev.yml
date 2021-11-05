@@ -63,11 +63,11 @@ spring:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
             - RequestResponseLoggingFilter
-            # - name: LoggingFilter
-            #   args:
-            #     baseMessage: Hi, There.
-            #     preLogger: true
-            #     postLogger: true
+            - name: LoggingFilter
+              args:
+                baseMessage: Hi, There.
+                preLogger: true
+                postLogger: true
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
