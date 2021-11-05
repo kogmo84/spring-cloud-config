@@ -32,8 +32,8 @@ spring:
         - name: GlobalFilter
           args:
             baseMessage: Spring Cloud Gateway Global Filter
-            preLogger: true
-            postLogger: true
+            preLogger: false
+            postLogger: false
       routes:
         - id: user-service
           uri: lb://USER-SERVICE
