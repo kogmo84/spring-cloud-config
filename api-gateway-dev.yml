@@ -66,8 +66,8 @@ spring:
             - name: LoggingFilter
               args:
                 baseMessage: Hi, There.
-                preLogger: true
-                postLogger: true
+                preLogger: false
+                postLogger: false
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
