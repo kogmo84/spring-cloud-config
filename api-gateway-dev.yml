@@ -33,7 +33,7 @@ spring:
           args:
             baseMessage: Spring Cloud Gateway Global Filter
             preLogger: false
-            postLogger: false
+            postLogger: true
       routes:
         - id: user-service
           uri: lb://USER-SERVICE
@@ -67,7 +67,7 @@ spring:
               args:
                 baseMessage: Hi, There.
                 preLogger: false
-                postLogger: false
+                postLogger: true
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
