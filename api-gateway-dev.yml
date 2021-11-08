@@ -132,6 +132,9 @@ redis:
   password:
   timeout: 6000
 
+maintenance-mode: 
+  enable: false
+
 # logging:
 #   level:
 #     org.springframework.cloud.gateway: debug
