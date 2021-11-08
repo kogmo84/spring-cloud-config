@@ -45,6 +45,7 @@ spring:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
             # - CustomFilter
             - RequestResponseLoggingFilter
+            - MaintenanceFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -53,6 +54,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - MaintenanceFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
