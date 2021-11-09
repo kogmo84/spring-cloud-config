@@ -13,6 +13,12 @@ eureka:
 spring:
   application:
     name: apigateway-service
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
   rabbitmq:
     host: 127.0.0.1
     port: 5672
@@ -133,10 +139,3 @@ maintenance-mode:
 #   level:
 #     org.springframework.cloud.gateway: debug
 #     reactor.netty: debug
-
-# zipkin:
-#   base-url: http://127.0.0.1:9411
-#   enabled: true
-# sleuth:
-#   sampler:
-#     probability: 1.0
