@@ -114,7 +114,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus, route
+        include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus, gateway
 
 redis:
   hostname: 10.10.102.196
