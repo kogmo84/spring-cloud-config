@@ -46,11 +46,6 @@ spring:
             # - CustomFilter
             - RequestResponseLoggingFilter
             - MaintenanceFilter
-            - name: LoggingFilter
-              args:
-                baseMessage: Hi, There.
-                preLogger: false
-                postLogger: true
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -77,11 +72,6 @@ spring:
             - MaintenanceFilter
             - AuthorizationHeaderFilter
             - RequestResponseLoggingFilter
-            - name: LoggingFilter
-              args:
-                baseMessage: Hi, There.
-                preLogger: false
-                postLogger: true
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
