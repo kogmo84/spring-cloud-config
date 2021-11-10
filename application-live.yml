@@ -1,0 +1,9 @@
+token:
+  expiration_time: 180000
+  secret: my_token_#live
+
+gateway:
+  ip: 127.0.0.1
+
+order_service:
+  url: http://I-APIGATEWAY-SERVICE/order-service/%s/orders
