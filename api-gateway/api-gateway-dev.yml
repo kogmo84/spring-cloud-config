@@ -31,9 +31,9 @@ spring:
       default-filters:
         - name: MaintenanceFilter
           args:
-            allService: true
-            userService: true
-            orderService: false
+            allService: false
+            userService: false
+            orderService: true
         - name: GlobalFilter
           args:
             baseMessage: Spring Cloud Gateway Global Filter
