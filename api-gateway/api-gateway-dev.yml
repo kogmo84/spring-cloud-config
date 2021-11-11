@@ -127,7 +127,7 @@ redis:
   timeout: 6000
 
 maintenance-mode: 
-  enable: true
+  enable: false
 
 # logging:
 #   level:
