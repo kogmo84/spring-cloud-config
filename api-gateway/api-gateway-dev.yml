@@ -32,7 +32,7 @@ spring:
         - name: MaintenanceFilter
           args:
             allService: false
-            userService: false
+            userService: true
             orderService: false
         - name: GlobalFilter
           args:
