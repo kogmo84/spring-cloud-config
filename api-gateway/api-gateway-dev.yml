@@ -63,7 +63,7 @@ spring:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}        
             - name: AuthorizationHeaderFilter
               args:
-                enableOwnerContent: false
+                enableOwnerContent: true
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -83,7 +83,7 @@ spring:
           filters:
             - name: AuthorizationHeaderFilter
               args:
-                enableOwnerContent: false
+                enableOwnerContent: true
         - id: first-service
           uri: lb://MY-FIRST-SERVICE
           predicates:
