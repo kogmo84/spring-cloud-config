@@ -116,7 +116,6 @@ redis:
   password:
   timeout: 6000
 
-# logging:
-#   level:
-#     org.springframework.cloud.gateway: debug
-#     reactor.netty: debug
+logging:
+  level:
+    com.example.apigatewayservice: info
