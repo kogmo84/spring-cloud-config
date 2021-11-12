@@ -29,11 +29,8 @@ spring:
       httpclient:
         wiretap: true
       default-filters:
-        - name: MaintenanceFilter
-          args:
-            allService: false
-            userService: false
-            orderService: true
+        - MaintenanceFilter
+        - RequestResponseLoggingFilter
         - name: GlobalFilter
           args:
             baseMessage: Spring Cloud Gateway Global Filter
@@ -48,7 +45,6 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - RequestResponseLoggingFilter
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -56,8 +52,7 @@ spring:
             - Method=POST,GET
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - RequestResponseLoggingFilter
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}            
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -65,8 +60,7 @@ spring:
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - RequestResponseLoggingFilter            
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}        
             - AuthorizationHeaderFilter            
         - id: user-service
           uri: lb://USER-SERVICE
