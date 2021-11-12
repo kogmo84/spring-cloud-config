@@ -34,7 +34,7 @@ spring:
         - name: GlobalFilter
           args:
             baseMessage: Spring Cloud Gateway Global Filter
-            preLogger: false
+            preLogger: true
             postLogger: true
       routes:
         - id: user-service
@@ -61,7 +61,9 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}        
-            - AuthorizationHeaderFilter            
+            - name: AuthorizationHeaderFilter
+              args:
+                enableOwnerContent: false
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
@@ -78,6 +80,10 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order-service/**
+          filters:
+            - name: AuthorizationHeaderFilter
+              args:
+                enableOwnerContent: false
         - id: first-service
           uri: lb://MY-FIRST-SERVICE
           predicates:
