@@ -84,6 +84,12 @@ spring:
             - name: AuthorizationHeaderFilter
               args:
                 enableOwnerContent: true
+        - id: health-check
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/health-check/**
+          filters:
+            - HealthCheckFilter
         - id: first-service
           uri: lb://MY-FIRST-SERVICE
           predicates:
